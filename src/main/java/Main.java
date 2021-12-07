@@ -102,7 +102,7 @@ public class Main {
         System.out.println("Please Enter departure time");
         String departureTime = scanner.nextLine();
 
-//        (boardingNum , date, origin, destination, eta, departureTime )
+        //(boardingNum , date, origin, destination, eta, departureTime )
         BoardingPass boardingPass = new BoardingPass(boardingNum, dateToLeave, origin, destinationLeave, eta, departureTime );
 
         System.out.println("Please Enter Ticket Price");

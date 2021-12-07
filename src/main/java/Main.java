@@ -59,7 +59,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please Enter your name");
         String name = scanner.nextLine();
-        System.out.println("temp");
+        
         System.out.println("Please Enter your email");
         String email = scanner.nextLine();
 

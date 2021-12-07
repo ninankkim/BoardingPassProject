@@ -17,7 +17,7 @@ public class Person {
 
     }
 
-    public Person(String name, String email, String phoneNum, char gender, int age, String datetoLeave, String destination, String departureTime)
+    public Person(String name, String email, String phoneNum, char gender, int age, String date, String destination, String departureTime)
     {
         //Validating input
         this.name = name;

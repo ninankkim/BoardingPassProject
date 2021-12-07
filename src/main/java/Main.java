@@ -72,18 +72,18 @@ public class Main {
         System.out.println("Please Enter your age");
         int age = scanner.nextInt();
 
-        System.out.println("Please Enter your name");
+        System.out.println("Please Enter your date");
         String date = scanner.nextLine();
 
-        System.out.println("Please Enter your name");
+        System.out.println("Please Enter your destination");
         String destination = scanner.nextLine();
 
-        System.out.println("Please Enter your name");
-        String depatureTime = scanner.nextLine();
+        System.out.println("Please Enter your departure time");
+        String departureTime = scanner.nextLine();
 
-        Person person = new Person(name, email, phoneNum, gender, age, date, destination, depatureTime);
+        Person person = new Person(name, email, phoneNum, gender, age, date, destination, departureTime);
 
-        scanner.nextLine(); // Skipping the buffered newline character
+//        scanner.nextLine(); // Skipping the buffered newline character
         System.out.println("Please Boarding Pass Number");
         String boardingNum = scanner.nextLine();
 
@@ -100,11 +100,10 @@ public class Main {
         String eta = scanner.nextLine();
 
         System.out.println("Please Enter departure time");
-        String departureTime = scanner.nextLine();
+        String departure = scanner.nextLine();
 
 //        (boardingNum , date, origin, destination, eta, departureTime )
-        BoardingPass boardingPass = new BoardingPass(boardingNum, dateToLeave, origin, destinationLeave, eta, departureTime );
-
+        BoardingPass boardingPass = new BoardingPass(boardingNum, dateToLeave, origin, destinationLeave, eta, departure);
         System.out.println("Please Enter Ticket Price");
         double ticketPrice = scanner.nextDouble();
 

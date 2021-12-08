@@ -19,7 +19,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             System.out.println("\n\n----------------------------------------------------\n");
             System.out.println("Please enter from the following choice");
-            System.out.println("1. Enter Ticket Information \n2. Write to file \n3. Print Ticket Info \n4. Exit");
+            System.out.println("1. Enter Passenger Information \n2. Review Passenger Information \n3. Print Boarding Pass\n4. Exit");
 
             choice = scanner.nextInt();
 
@@ -36,7 +36,7 @@ public class Main {
 
                 case 3:
                     // this just prints the ticket
-                    System.out.println("Printing Ticket..");
+                    System.out.println("Printing Boarding Pass..");
                     printTicketInfo(ticket);
                     break;
 

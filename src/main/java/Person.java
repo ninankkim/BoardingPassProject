@@ -6,7 +6,6 @@ public class Person {
     private String phoneNum;
     private char gender;
     private int age;
-
     private String date;
     private String destination;
     private String departureTime;
@@ -28,7 +27,6 @@ public class Person {
         if(age >0)
             this.age = age;
     }
-
 
     // Methods
     public String getName() {

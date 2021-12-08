@@ -1,15 +1,12 @@
 public class Person {
 
-    // Instance variables
-    private String name ;
-    private String email;
-    private String phoneNum;
-    private char gender;
-    private int age;
+    // Instance variables - this is the information we need to have and grab from the user
+    private String name ; // "sally"
+    private String email; // "sally@gmail.com"
+    private String phoneNum; // "678-575-9449"
+    private char gender; // 'F' or 'M'
+    private int age; // 35
 
-    private String date;
-    private String destination;
-    private String departureTime;
 
     //Constructors
     public Person()
@@ -17,7 +14,8 @@ public class Person {
 
     }
 
-    public Person(String name, String email, String phoneNum, char gender, int age, String date, String destination, String departureTime)
+    // we created a constructor that would have all these information
+    public Person(String name, String email, String phoneNum, char gender, int age)
     {
         //Validating input
         this.name = name;
@@ -25,12 +23,15 @@ public class Person {
         this.phoneNum = phoneNum;
         this.gender = gender;
 
+        // here we just said that an invalid input of anything less than 0 (you cannot be -1 years old)
         if(age >0)
             this.age = age;
+
+
     }
 
 
-    // Methods
+    // Methods - getters and setters which allow us to grab and set the data
     public String getName() {
         return name;
     }
@@ -72,29 +73,6 @@ public class Person {
             this.age = age;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public String getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
-    }
 
     @Override
     public String toString() {
@@ -104,9 +82,7 @@ public class Person {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", gender=" + gender +
                 ", age=" + age +
-                ", date='" + date + '\'' +
-                ", destination='" + destination + '\'' +
-                ", departureTime='" + departureTime + '\'' +
                 '}';
     }
 }
+

@@ -3,134 +3,107 @@ import java.util.Scanner;
 
 public class Main {
 
-    // we have an array list that will hold our ticket information
-    public static ArrayList<Ticket> ticketList = new ArrayList<>();
-    // main method
+    public static ArrayList<BoardingPass> boardingPassList = new ArrayList<>();
+
     public static void main(String[] args) {
 
         // we just set choice to 0 for our switch statements
         int choice = 0;
-        // we create a new instance of a ticket
-        Ticket ticket = new Ticket();
+        // we create a new instance of a BoardingPass
+        BoardingPass BoardingPass = new BoardingPass();
 
         // create a do while loop that really is just to take user input and make it almost like a user lobby/menu
         do
         {
             Scanner scanner = new Scanner(System.in);
             System.out.println("\n\n----------------------------------------------------\n");
-            System.out.println("Please enter from the following choice");
-            System.out.println("1. Enter Ticket Information \n2. Write to file \n3. Print Ticket Info \n4. Exit");
+            System.out.println("Please enter from the following choices: ");
+            System.out.println("1.) Enter BoardingPass Information\n2.) Print BoardingPass Info \n3.) Exit");
 
             choice = scanner.nextInt();
 
             switch (choice)
             {
                 case 1:
-                    ticket  = enterInfo();
+                    BoardingPass boardingPass = enterInfo();
+                    System.out.println(boardingPass.toString());
                     break;
 
                 case 2:
-                    // we need to create something where the information will now be put into a text file
-                    writeInfoToFile(ticket, "OutputFile.txt");
-                     break;
-
-                case 3:
-                    // this just prints the ticket
-                    System.out.println("Printing Ticket..");
-                    printTicketInfo(ticket);
+                    // this just prints the BoardingPass
+                    System.out.println("Please wait - Printing BoardingPass...");
+                    printBoardingPassInfo(BoardingPass);
                     break;
 
-                case 4:
+                case 3:
                     // this just exits out of the whole program
-                    System.out.println("Exiting ..");
-                    choice = 4;
+                    System.out.println("Thank you - Exiting ...");
+                    choice = 3;
                     break;
 
                 default:
                     break;
             }
 
-        }while(choice != 4);
+        }while(choice != 3);
 
     }
 
-    private static Ticket enterInfo()
+    private static BoardingPass enterInfo()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Enter your name");
+        System.out.println("Please enter your name: " + "\n(Ex. Sally Smith)");
         String name = scanner.nextLine();
-        
-        System.out.println("Please Enter your email");
+
+        System.out.println("Please enter your email: " + "\n(Ex. sallysmith@gmail.com)");
         String email = scanner.nextLine();
 
-        System.out.println("Please Enter your phone number");
+        System.out.println("Please enter your phone number: " + "\n(Ex. 123-456-7890)");
         String phoneNum = scanner.nextLine();
 
-        System.out.println("Please Enter your gender");
+        System.out.println("Please enter your gender: " + "\n(Ex. F or M)");
         char gender = scanner.next().charAt(0);
 
-        System.out.println("Please Enter your age");
+        System.out.println("Please enter your age: " + "\n(Ex. 35)");
         int age = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.println("Please Enter your date");
+        System.out.println("Please enter your date you would like to depart: " + "\n(Ex. 01-01-2022)");
         String date = scanner.nextLine();
 
-        System.out.println("Please Enter your destination");
-        String destination = scanner.nextLine();
-
-        System.out.println("Please Enter your departure time");
+        System.out.println("Please enter the time you would like to depart: " + "\n(Ex. 10:00 AM / PM)");
         String departureTime = scanner.nextLine();
 
-        Person person = new Person(name, email, phoneNum, gender, age, date, destination, departureTime);
-
-//        scanner.nextLine(); // Skipping the buffered newline character
-        System.out.println("Please Boarding Pass Number");
-        String boardingNum = scanner.nextLine();
-
-        System.out.println("Please Enter date");
-        String dateToLeave = scanner.nextLine();
-
-        System.out.println("Please Enter Origin");
+        System.out.println("Please enter your destination: " + "\n(Ex. Los Angeles, California)");
         String origin = scanner.nextLine();
 
-        System.out.println("Please Enter Destination");
-        String destinationLeave = scanner.nextLine();
+        System.out.println("Please enter your destination: " + "\n(Ex. Los Angeles, California)");
+        String destination = scanner.nextLine();
 
-        System.out.println("Please Enter ETA");
-        String eta = scanner.nextLine();
+        Person person = new Person(name, email, phoneNum, gender, age);
 
-        System.out.println("Please Enter departure time");
-        String departure = scanner.nextLine();
+        BoardingPass boardingPass = new BoardingPass( date , origin, destination, departureTime, person);
 
-//        (boardingNum , date, origin, destination, eta, departureTime )
-        BoardingPass boardingPass = new BoardingPass(boardingNum, dateToLeave, origin, destinationLeave, eta, departure);
-        System.out.println("Please Enter Ticket Price");
-        double ticketPrice = scanner.nextDouble();
+//        Person person = new Person("sally", "sally@gmail.com", "123-123-1234", 'F', 34);
+//
+//        BoardingPass boardingPass = new BoardingPass("01-01-2020", "Los Angeles, California", "Atlanta,Georgia","10:00 AM", person);
 
-        Ticket ticket = new Ticket(boardingPass, person, ticketPrice);
+        boardingPassList.add(boardingPass);
 
-        ticketList.add(ticket);
-
-        return ticket;
-
-
+        return boardingPass;
     }
 
-    private static void printTicketInfo(Ticket ticket)
+    private static void printBoardingPassInfo(BoardingPass BoardingPass)
     {
-        for (int i=0; i < ticketList.size(); i++)
+        for (int i=0; i < boardingPassList.size(); i++)
         {
-            System.out.print(ticketList.get(i).toString());
+            System.out.print(boardingPassList.get(i).toString());
             System.out.println("");
         }
-
-
     }
 
-    private static String writeInfoToFile(Ticket ticket, String filename)
-    {
-
-        return "Successfully written data to file ";
-
-    }
+//    private static String writeInfoToFile(BoardingPass BoardingPass, String filename)
+//    {
+//        return "Successfully written data to file ";
+//    }
 }

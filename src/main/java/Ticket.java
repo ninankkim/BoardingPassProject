@@ -1,32 +1,20 @@
 public class Ticket {
 
     // Variables
-    private BoardingPass boardingPass;
     private Person person;
-    private double ticketPrice;
-
+//    private double ticketPrice;
 
     //Constructors
     public Ticket()
     {
     }
 
-    public Ticket(BoardingPass boardingPass, Person person, double ticketPrice) {
-        this.boardingPass = boardingPass;
+    public Ticket(Person person) {
         this.person = person;
-        this.ticketPrice = ticketPrice;
+//        this.ticketPrice = ticketPrice;
     }
 
     //Getter
-    public BoardingPass getBoardingPass()
-    {
-        return this.boardingPass;
-    }
-
-    public void setBoardingPass(BoardingPass boardingPass)
-    {
-        this.boardingPass = boardingPass;
-    }
 
 
     public Person getPerson()
@@ -39,26 +27,24 @@ public class Ticket {
         this.person = person;
     }
 
-    public double getTicketPrice()
-    {
-        return this.ticketPrice;
-    }
-
-    public void setTicketPrice(double ticketPrice)
+    //    public double getTicketPrice()
+//    {
+//        return this.ticketPrice;
+//    }
+//
+//    public void setTicketPrice(double ticketPrice)
     {
         //
-        //person.getAge()
-        this.ticketPrice = ticketPrice;
+//        //person.getAge()
+//        this.ticketPrice = ticketPrice;
 
-       // compare person.getGender()
+        // compare person.getGender()
     }
 
     @Override
     public String toString() {
         return "Ticket{" +
-                "boardingPass=" + boardingPass.toString() +
-                ", person=" + person.toString() +
-                ", ticketPrice=" + ticketPrice +
+                "person=" + person +
                 '}';
     }
 }

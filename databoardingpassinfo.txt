@@ -1,0 +1,20 @@
+<====================================================================>
+BOARDING PASS TICKET
+<====================================================================>
+BoardingPassInformation:  
+Boarding Number = 925
+Departure Date = 12-12-1234
+Origin = ATL
+Destination = LAX
+Estimated Time of Arrival = 7:00 PM
+Departure Time = 3:00 PM
+Ticket Price = 236
+Ticket Price After Discount = 70.799995
+Personal Flyer Information:  
+Full Name = Sally
+Email = sally@gmail.com
+Phone Number = 123-123-1234
+Gender = F
+Age = 82
+<====================================================================>
+
